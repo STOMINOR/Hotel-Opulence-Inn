@@ -1,0 +1,34 @@
+<html>
+<head>
+  <!-- All other meta and link tags -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-controller="BookingController">
+    <section id="booking-form">
+        <div class="container">
+          <h2>Book Your Stay</h2>
+          <form ng-submit="submitBooking()">
+            <div class="form-group">
+              <label for="name">Full Name:</label>
+              <input type="text" id="name" ng-model="booking.name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" ng-model="booking.email" required>
+            </div>
+            <div class="form-group">
+              <label for="checkin">Check-in Date:</label>
+              <input type="date" id="checkin" ng-model="booking.checkin" required>
+            </div>
+            <div class="form-group">
+              <label for="checkout">Check-out Date:</label>
+              <input type="date" id="checkout" ng-model="booking.checkout" required>
+            </div>
+            <button type="submit" class="btn">Book Now</button>
+          </form>
+          <div class="confirmation" ng-if="confirmationMessage">
+            <p>{{ confirmationMessage }}</p>
+          </div>
+        </div>
+      </section>
+      
